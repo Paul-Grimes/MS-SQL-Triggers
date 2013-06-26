@@ -9,6 +9,29 @@
 -- -- What is inserted?
 -- -- What is deleted?
 
+-- How to check to see if a trigger exists and if so, delete it.
+
+-- This works for all triggers.
+IF EXISTS(
+	SELECT 
+		* 
+	FROM sys.triggers 
+	WHERE name = 'TriggerName'
+	)
+BEGIN
+	DROP TRIGGER TriggerName;
+END
+GO
+
+-- This does not work for DDL Triggers
+
+IF EXISTS()
+BEGIN
+	DROP TRIGGER TriggerName;
+END
+GO
+
+
 -- Basic Syntax for an insert trigger
 CREATE TRIGGER prefix_TriggerName
 ON TABLENAME
