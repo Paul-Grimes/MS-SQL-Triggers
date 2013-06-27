@@ -44,3 +44,6 @@ BEGIN
 END
 GO
   
+
+SET NOCOUNT ON -- Stops showing the message (N row(s) affected)
+SET NOCOUNT OFF -- Shows the message (N row(s) affected)
